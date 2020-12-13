@@ -75,6 +75,44 @@ def solve_178fcbfb(x):
                 x[i][j]= 1
     return x
 
+#Function 4: Solve 5614dbcf.json
+def solve_5614dbcf(x):
+# Array Slicing & Reshaping
+# maximum value in an array 
+    blocks = []
+
+    first_block = x[0:3, 0:9]
+    lfb = first_block[0:3, 0:3]
+    blocks.append(lfb)
+    mfb = first_block[0:3, 3:6]
+    blocks.append(mfb)
+    rfb = first_block[0:3, 6:9]
+    blocks.append(rfb)
+
+    second_block = x[3:6, 0:9]
+    lsb = second_block[0:3, 0:3]
+    blocks.append(lsb)
+    msb = second_block[0:3, 3:6]
+    blocks.append(msb)
+    rsb = second_block[0:3, 6:9]
+    blocks.append(rsb)
+
+    third_block = x[6:9, 0:9]
+    ltb = third_block[0:3, 0:3]
+    blocks.append(ltb)
+    mtb = third_block[0:3, 3:6]
+    blocks.append(mtb)
+    rtb = third_block[0:3, 6:9]
+    blocks.append(rtb)
+
+    output_array = []
+    for block in blocks:
+        output_array.append(np.argmax(np.bincount(block.flat)))
+    np_output = np.array(output_array)
+    x = np.reshape(np_output, (3,3))
+    
+    return x
+
 
 def main():
     # Find all the functions defined in this file whose names are
