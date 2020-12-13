@@ -48,7 +48,32 @@ def solve_4258a5f9(x):
                 x[i-1][j-1] = 1
     return x
 
-
+#Function 3: Solve 178fcbfb.json
+def solve_178fcbfb(x):
+    redcol = []
+    bluerow = []
+    greenrow = []
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if x[i][j] == 2:
+                redcol.append(j)           
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if j == redcol[0]:
+                x[i][j]= 2
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if x[i][j] == 3:
+                greenrow.append(i)
+            if x[i][j] == 1:
+                bluerow.append(i)
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            for i in greenrow:
+                x[i][j]= 3
+            for i in bluerow:
+                x[i][j]= 1
+    return x
 
 
 def main():
