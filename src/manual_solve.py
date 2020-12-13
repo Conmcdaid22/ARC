@@ -5,22 +5,27 @@ import json
 import numpy as np
 import re
 
+# Conor McDaid - 20235833
 # Link to my Github: https://github.com/Conmcdaid22/ARC.git
 
-### YOUR CODE HERE: write at least three functions which solve
-### specific tasks by transforming the input x and returning the
-### result. Name them according to the task ID as in the three
-### examples below. Delete the three examples. The tasks you choose
-### must be in the data/training directory, not data/evaluation.
 
 #Function 1: Solve 08ed6ac7.json
+
+#Description: 
+#This transformation returns the colours of the columns in order from highest to lowest
+#Blue is mapped to the largest column, Red to the second largest, Green to the third Largest,
+#and Yellow is mapped to the smallest column. 
+
+#Statement: 
+#All training/test grids are returned correctly. 
+
 def solve_08ed6ac7(x):
-    cols = []
+    cols = [] 
     for i in range(len(x)):
         for j in range(len(x[i])):
             if x[i][j] == 5:
-                if j not in cols:
-                    cols.append(j)
+                if j not in cols: 
+                    cols.append(j) #appends any column index that is not in the empty list to the list. 
 
     for i in range(len(x)):
         for j in range(len(x[i])):
@@ -32,10 +37,21 @@ def solve_08ed6ac7(x):
                 if j == cols[2]:
                     x[i][j]= 3
                 if j == cols[3]:
-                    x[i][j] = 4
+                    x[i][j] = 4 # searches grid and returns the corresponding column and changes it to their corresponding colours.
     return x
 
+
+
+
+
+
 #Function 2: Solve 4258a5f9.json
+
+#Description:
+#
+
+#Statement:
+#
 def solve_4258a5f9(x):
     for i in range(len(x)):
         for j in range(len(x[i])):
@@ -50,7 +66,18 @@ def solve_4258a5f9(x):
                 x[i-1][j-1] = 1
     return x
 
+
+
+
+
 #Function 3: Solve 178fcbfb.json
+
+
+#Description:
+#
+
+#Statement:
+#
 def solve_178fcbfb(x):
     redcol = []
     bluerow = []
@@ -77,7 +104,17 @@ def solve_178fcbfb(x):
                 x[i][j]= 1
     return x
 
+
+
+
+
 #Function 4: Solve 5614dbcf.json
+
+#Description:
+#
+
+#Statement:
+#
 def solve_5614dbcf(x):
 # Array Slicing & Reshaping
 # maximum value in an array 
@@ -116,7 +153,17 @@ def solve_5614dbcf(x):
     return x
 
 
+
+
+
+
 #Function 5: Solve 3af2c5a8.json
+
+#Description:
+#
+
+#Statement:
+#
 def solve_3af2c5a8(x):
     #Array flipping, mirroring and stacking
     input_12_array2 = np.fliplr(x)
