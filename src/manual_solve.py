@@ -35,17 +35,17 @@ def solve_08ed6ac7(x):
 
 #Function 2: Solve 4258a5f9.json
 def solve_4258a5f9(x):
-    for i in range(len(input_4_array)):
-        for j in range(len(input_4_array[i])):
-            if input_4_array[i][j] == 5:
-                input_4_array[i-1][j] = 1
-                input_4_array[i+1][j] = 1
-                input_4_array[i][j-1] = 1
-                input_4_array[i][j+1] = 1
-                input_4_array[i+1][j+1] = 1
-                input_4_array[i-1][j+1] = 1
-                input_4_array[i+1][j-1] = 1
-                input_4_array[i-1][j-1] = 1
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if x[i][j] == 5:
+                x[i-1][j] = 1
+                x[i+1][j] = 1
+                x[i][j-1] = 1
+                x[i][j+1] = 1
+                x[i+1][j+1] = 1
+                x[i-1][j+1] = 1
+                x[i+1][j-1] = 1
+                x[i-1][j-1] = 1
     return x
 
 
