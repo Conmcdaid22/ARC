@@ -10,14 +10,30 @@ import re
 ### result. Name them according to the task ID as in the three
 ### examples below. Delete the three examples. The tasks you choose
 ### must be in the data/training directory, not data/evaluation.
-def solve_6a1e5592(x):
+
+#Function 1: Solve 08ed6ac7.json
+def solve_08ed6ac7(x):
+    cols = []
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if x[i][j] == 5:
+                if j not in cols:
+                    cols.append(j)
+
+    for i in range(len(x)):
+        for j in range(len(x[i])):
+            if x[i][j] == 5:
+                if j == cols[0]:
+                    x[i][j]= 1
+                if j == cols[1]:
+                    x[i][j] = 2
+                if j == cols[2]:
+                    x[i][j]= 3
+                if j == cols[3]:
+                    x[i][j] = 4
     return x
 
-def solve_b2862040(x):
-    return x
 
-def solve_05269061(x):
-    return x
 
 
 def main():
