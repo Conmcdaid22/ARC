@@ -5,6 +5,8 @@ import json
 import numpy as np
 import re
 
+# Link to my Github: https://github.com/Conmcdaid22/ARC.git
+
 ### YOUR CODE HERE: write at least three functions which solve
 ### specific tasks by transforming the input x and returning the
 ### result. Name them according to the task ID as in the three
