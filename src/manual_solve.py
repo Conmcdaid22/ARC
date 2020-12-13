@@ -114,6 +114,17 @@ def solve_5614dbcf(x):
     return x
 
 
+#Function 5: Solve 3af2c5a8.json
+def solve_3af2c5a8(x):
+    #Array flipping, mirroring and stacking
+    input_12_array2 = np.fliplr(x)
+    input_12_array3 = np.hstack((x, input_12_array2))
+    input_12_array4 = np.flipud(input_12_array3)
+    input_12_array5 = np.vstack((input_12_array3, input_12_array4))
+    x = input_12_array5
+    return x
+
+
 def main():
     # Find all the functions defined in this file whose names are
     # like solve_abcd1234(), and run them.
