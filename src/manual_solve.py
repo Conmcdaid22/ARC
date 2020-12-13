@@ -33,6 +33,21 @@ def solve_08ed6ac7(x):
                     x[i][j] = 4
     return x
 
+#Function 1: Solve 4258a5f9.json
+def solve_4258a5f9(x):
+    for i in range(len(input_4_array)):
+        for j in range(len(input_4_array[i])):
+            if input_4_array[i][j] == 5:
+                input_4_array[i-1][j] = 1
+                input_4_array[i+1][j] = 1
+                input_4_array[i][j-1] = 1
+                input_4_array[i][j+1] = 1
+                input_4_array[i+1][j+1] = 1
+                input_4_array[i-1][j+1] = 1
+                input_4_array[i+1][j-1] = 1
+                input_4_array[i-1][j-1] = 1
+    return x
+
 
 
 
