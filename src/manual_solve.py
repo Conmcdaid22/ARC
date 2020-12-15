@@ -80,7 +80,7 @@ def solve_4258a5f9(x):
 #There is a precidence of rows over columns in this transformation in that the rows must sit above the columns. 
 
 #Statement:
-#
+#All training/test grids are returned correctly. 
 def solve_178fcbfb(x):
     redcol = []
     bluerow = []
@@ -118,10 +118,13 @@ def solve_178fcbfb(x):
 #Function 4: Solve 5614dbcf.json
 
 #Description:
-#
+#This transformation takes in an array of size 9x9 and what is required here is a reshapping of the input array to return a 3x3.
+#Each value in the 3x3 array is a reference to the most common value found in each sub array within the 9x9 array. 
+#as well as reshaping, any of the grey squares found in the test cases are converted to the most common colour from each sub array.
 
 #Statement:
-#
+#All training/test grids are returned correctly. 
+
 def solve_5614dbcf(x):
 # Array Slicing & Reshaping
 # maximum value in an array 
@@ -159,18 +162,21 @@ def solve_5614dbcf(x):
     
     return x
 
-
-
+#This function splits the 9x9 array into sub arrays, of 3x3 and then performs a check on each of them. 
+#Once the arrays have been split, the most common/frequent values within each of these sub array will be used to convert any of the grey squares(outliers) found in the test inputs. 
+#These are then transposed and reshapped to a 3x3 matrix which is the output required for this particular task. 
 
 
 
 #Function 5: Solve 3af2c5a8.json
 
 #Description:
-#
+#The transformation required in this task is a duplication of the current array and a manipulation of the values found. 
+#The first array requires to be flipped on the horizontal axis and this then needs to be appended to the end of the first array. 
+#This then needs to be flipped on the vertical axis and then this needs to be appended to the bottom of the new array.
 
 #Statement:
-#
+#All training/test grids are returned correctly. 
 def solve_3af2c5a8(x):
     #Array flipping, mirroring and stacking
     input_12_array2 = np.fliplr(x)
@@ -179,6 +185,10 @@ def solve_3af2c5a8(x):
     input_12_array5 = np.vstack((input_12_array3, input_12_array4))
     x = input_12_array5
     return x
+
+#This function takes in an array and flips it on the verticle axis (mirror exactly what is there), this array is then stacked on the end of the current array to create a new array.
+#The function then repeats the same step and flips the array on the horizontal axis this time, and this is then stacked on the bottom of the array created in the step above.
+#The resulting array is then mapped back to the initial array that was passed in, in order to ensure the final output is correct.  
 
 
 def main():
