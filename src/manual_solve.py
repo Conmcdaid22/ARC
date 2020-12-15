@@ -91,7 +91,7 @@ def solve_178fcbfb(x):
                 redcol.append(j)           
     for i in range(len(x)):
         for j in range(len(x[i])):
-            if j == redcol[0]:
+              for j in redcol:
                 x[i][j]= 2
     for i in range(len(x)):
         for j in range(len(x[i])):
