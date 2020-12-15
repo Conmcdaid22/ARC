@@ -25,7 +25,8 @@ def solve_08ed6ac7(x):
         for j in range(len(x[i])):
             if x[i][j] == 5:
                 if j not in cols: 
-                    cols.append(j) #appends any column index that is not in the empty list to the list. 
+                    cols.append(j) 
+#appends any column index that is not in the empty list to the list cols where there value is equal to 5. 
 
     for i in range(len(x)):
         for j in range(len(x[i])):
@@ -37,21 +38,21 @@ def solve_08ed6ac7(x):
                 if j == cols[2]:
                     x[i][j]= 3
                 if j == cols[3]:
-                    x[i][j] = 4 # searches grid and returns the corresponding column and changes it to their corresponding colours.
+                    x[i][j] = 4 
+# searches grid/array for columns determined in previous for loop. Returns the corresponding column and changes it to their corresponding colours.
     return x
-
-
-
-
 
 
 #Function 2: Solve 4258a5f9.json
 
 #Description:
-#
+#This transformation will take in an array and determine what values of the array are equal to 5(Grey Squares)
+#These grey squares will then be surrounded by a full outer ring of blue squares. 
+#This essentially blocks any grey squares with an full outer blue square.
 
 #Statement:
-#
+#All training/test grids are returned correctly. 
+
 def solve_4258a5f9(x):
     for i in range(len(x)):
         for j in range(len(x[i])):
@@ -65,16 +66,18 @@ def solve_4258a5f9(x):
                 x[i+1][j-1] = 1
                 x[i-1][j-1] = 1
     return x
-
+# Where any value of 5 is found in the array, each i,j value +-1 has been transformed and updated to equal the value of 1.
+# This encloses and grey squares with a full outer blue square during the solve function for this task. 
 
 
 
 
 #Function 3: Solve 178fcbfb.json
 
-
 #Description:
-#
+#The required transformation for this task, is to return any single red squares and transform them into full red columns,
+# and to return any single blue or green squares and transfrom them into full blue or green rows.
+#There is a precidence of rows over columns in this transformation in that the rows must sit above the columns. 
 
 #Statement:
 #
@@ -104,7 +107,11 @@ def solve_178fcbfb(x):
                 x[i][j]= 1
     return x
 
-
+#Above function, creates empty lists to be used to determine what columns and rows are required within the transformation. 
+#the function checks, in order of columns, then rows for any single values that equal to 2. It appends the col to the empty list,
+#and then performs a transformation on the column and updates the whole column to 2.
+#The function then checks the rows for any single values that equal 3 or 1, it then converts all the rows present in the list to match the value found within the bluerow / greenrow lists. 
+#Completing it in this order will overwrite any of the rows that have been transformed correctly over the columns.
 
 
 
