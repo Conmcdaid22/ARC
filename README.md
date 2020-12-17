@@ -66,5 +66,14 @@ After you've obtained the correct answer for the current test input grid, you ca
 When you're done with a task, use the "load task" button to open a new task.
 
 ### Summary & Reflection
+This section of the README file will cover python features and libraries used throughout the Solve_* functions that have been added to the manual_solve.py file. It will cover any commonalities or differences used in each of the tasks. There were 2 python libraries common across all tasks within the manual_solve.py file. These were:
 
-This section of the README file will cover python features and libraries used throughout the Solve_* functions that have been added to the manual_solve.py file. It will cover any commonalities or differences used in each of the tasks. 
+#### Import Json
+The purpose of this library for these solutions, is to parse json files into python dictionaries or lists. This library was used at the beginning of each of the tasks. The library read in individual tasks which were then used within the solve functions in order to generate outputs that matched the correct solutions of the transformations. For each task, the JSON format of each file was input imported, and the "train" keys of the JSON files were used in order to determine a solution to each transformation. 
+
+
+#### Import Numpy as np 
+This purpose of this library was to be able to work with arrays. As each of the tasks involved in this assignment were built using arrays it was an essential library required in order to complete each transformation task. The numpy library provides a range of mathematical operations that ca nbe performed on n-dimensional arrays. 
+
+
+
