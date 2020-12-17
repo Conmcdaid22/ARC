@@ -65,15 +65,35 @@ After you've obtained the correct answer for the current test input grid, you ca
 
 When you're done with a task, use the "load task" button to open a new task.
 
-### Summary & Reflection
+### Summary
 This section of the README file will cover python features and libraries used throughout the Solve_* functions that have been added to the manual_solve.py file. It will cover any commonalities or differences used in each of the tasks. There were 2 python libraries common across all tasks within the manual_solve.py file. These were:
 
-#### Import Json
+
+#### 1. Import Json
 The purpose of this library for these solutions, is to parse json files into python dictionaries or lists. This library was used at the beginning of each of the tasks. The library read in individual tasks which were then used within the solve functions in order to generate outputs that matched the correct solutions of the transformations. For each task, the JSON format of each file was input imported, and the "train" keys of the JSON files were used in order to determine a solution to each transformation. 
 
 
-#### Import Numpy as np 
+#### 2. Import Numpy as np 
 This purpose of this library was to be able to work with arrays. As each of the tasks involved in this assignment were built using arrays it was an essential library required in order to complete each transformation task. The numpy library provides a range of mathematical operations that ca nbe performed on n-dimensional arrays. 
 
+### Other Features and Methods used throughout the Solve_* Functions:
+#### 1. Nested for Loops
+The majority of the solve functions were built with the 'Nested for Loop' backbone for each solution. The nested for loops that were used, allowed me to segment each of the arrays into rows and columns, it also allowed me to get at each individual element of each array depending on each task. This meant I was able to isolate elements based on their values or locations within an array.  This was one of the most useful features that was used in the solutions as the transformations required an update to some or all of the elements present in each array. 
 
+#### 2. if Statements
+This feature was also common across a number of the solved tasks. The 'if statement' is a mechanism of determining whether or not a certain block of code should be executed or not. Using this simultaneously with the nested for loops meant I was able to transform specific rows, columns or elements of an array to a new value. This allowed me to perform operations on specific values in each training array and be able to create the correct outputs for a number of the tasks.
+
+#### 3. Slicing 
+Slicing was the main feature used to solve the 'solve_5614dbcf' function. This particular transformation required a reshape of the input array to mirror eactly the input, on a smaller scale, while transforming any outliers to the same colour. My solution to this was to use slicing to isolate each sub array in order to generate a correct output. This feature could be extremely beneficial for future solutions for similar tasks. 
+
+#### 4. Array Manipulation 
+Most of the solutions to the tasks used array manipulation of some sort in order to determine a correct output. This section covers the features used to solve the 'solve_3af2c5a8' function. This particular task required the  reshape of the size of the input array as well modifying the location of the elements. The most straight forward solution for me was to flip the array on both the Horizontal and vertical axis while appending each of these transformations onto either the end or bottom of the array to create a new array. This was done using the following numpy features:
+
+       np.fliplr, np.hstack, np.flipud, np.vstack
+       
+#### 5. np.argmax(np.bincount(block.flat))
+This feature allowed me to determine the highest value in an array by flattening the array into a 1D array and returning the value with the highest frequency present. This was required in one of the tasks to solve the transformation in order to determine what values to change any grey squares. 
+
+### Reflection 
+This assignment allowed me to explore and design functions to behave like humans and solve tasks in a way that a human would do, through the means of programming. Some of these tasks can be very easily solved by humans and determining the correct transformation for some of the more difficult task could be easily done by eye. However, converting this into programming language and expecting similar outcomes has showen me that it is a far more complex world then I'd first imagined. The use of the features discussed above, could be further enhanced and manipulated in order to tackle some of the more advanced transformations. I feel that the features used here are some of the fundamentals required to solve the vast library of ARC tasks. 
 
