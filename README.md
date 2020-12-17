@@ -64,3 +64,7 @@ When your output grid is ready, click the green "Submit!" button to check your a
 After you've obtained the correct answer for the current test input grid, you can switch to the next test input grid for the task using the "Next test input" button (if there is any available; most tasks only have one test input).
 
 When you're done with a task, use the "load task" button to open a new task.
+
+### Summary & Reflection
+
+This section of the README file will cover python features and libraries used throughout the Solve_* functions that have been added to the manual_solve.py file. It will cover any commonalities or differences used in each of the tasks. 
